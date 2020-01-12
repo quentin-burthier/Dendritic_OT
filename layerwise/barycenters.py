@@ -24,10 +24,14 @@ def lw_barycenter(roots: List[Root], n_layers: int, reg=1e-3):
 
     vertical_bar = vertical_barycenter(A, n_layers, reg)
     layers_bar = layers_barycenters(layers)
+    # for i, layer in enumerate(vertical_bar):
+    #     if layer is None:
+    #         print(i)
 
     nodes = np.vstack([np.hstack((layer[:, :2],
                                   z*np.ones((len(layer), 1)),
                                   dmuV * layer[:, -1:]))
+                    #    if isinstance(layer, np.ndarray) else np.array([[0, 0, z, 0]])
                        for dmuV, z, layer in zip(vertical_bar,
                                                  np.linspace(0, -1, n_layers),
                                                  layers_bar)])
@@ -77,6 +81,7 @@ def layer_mass(layers):
 
 
 def plot_barycenter_nodes(nodes: np.ndarray, size_factor=2.):
+    """Plots a point cloud."""
     fig = go.Figure(go.Scatter3d(
         x=nodes[:, 0],
         y=nodes[:, 1],

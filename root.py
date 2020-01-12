@@ -123,7 +123,8 @@ class Root:
                               y=line[:, 1],
                               z=line[:, 2],
                               mode='lines',
-                              line=dict(width=self.plot_rescale_factor * radius))
+                              line=dict(width=self.plot_rescale_factor * radius),
+                              showlegend=False)
                  for line, radius in zip(self.lines, self.radii)]
 
         if draw_nodes:

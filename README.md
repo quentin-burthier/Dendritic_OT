@@ -1,6 +1,8 @@
-# Dendritic_UOT
+# Dendritic_OT
 
-Unbalanced Optimal Transport and barycenters for dendritic measures
+Numerical survey of the article
+Optimal Transport and barycenters for dendritic measures
+Young-Heon Kim, Brendan Pass, David J. Schneider
 
 ## Root species
 
